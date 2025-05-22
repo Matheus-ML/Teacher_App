@@ -1,4 +1,4 @@
-package com.senai.teacherapp;
+package com.senai.teacherapp.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
