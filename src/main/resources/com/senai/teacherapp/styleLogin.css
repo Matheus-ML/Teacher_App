@@ -1,0 +1,18 @@
+.radius-anchorpane{
+    -fx-background-color: #f8ecec;
+    -fx-border-width: 3;
+    -fx-border-color: #f8ecec;
+    -fx-border-radius: 90;
+
+}
+.tittle-User{
+
+    -fx-font-size: 18px;
+    -fx-fill: #666167;         /* Cor do texto (azul escuro elegante) */
+    -fx-font-weight: bold;
+
+}
+
+.text-field-user{
+
+}
