@@ -7,12 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
-
-
 
 public class HelloController {
     @FXML
@@ -27,4 +26,10 @@ public class HelloController {
         ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
         /* Stage = disparo, node= prenda-o, source = identifique de onde veio, scene de que cena veio, window e close =  pegue essa janele e feche*/
     }
+
+    @FXML
+    private PasswordField txtPassoword;
+
+    @FXML
+    private TextField txtUser;
 }
