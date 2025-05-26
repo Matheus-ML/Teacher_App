@@ -11,9 +11,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
-
-
 public class HelloController {
     @FXML
     void btnEnter(ActionEvent event) throws IOException {
