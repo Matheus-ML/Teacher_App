@@ -1,0 +1,5 @@
+.button-exit{
+    -fx-background-color: transparent;
+    -fx-border-style: transparent;
+    -fx-cursor: hand;
+}
