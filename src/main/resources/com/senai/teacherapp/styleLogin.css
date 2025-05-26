@@ -1,18 +1,27 @@
-.radius-anchorpane{
-    -fx-background-color: #f8ecec;
+.radius-anchorpane{  /*Estilização do fundo de tela*/
+    -fx-background-color: #ffffff;
     -fx-border-width: 3;
     -fx-border-color: #f8ecec;
-    -fx-border-radius: 90;
-
+    -fx-border-radius: 20;
 }
-.tittle-User{
-
-    -fx-font-size: 18px;
-    -fx-fill: #666167;         /* Cor do texto (azul escuro elegante) */
+.tittle-User{  /*Estilização do titulo "Usuário"*/
+    -fx-font-size: 14px;
+    -fx-fill: #8f8591;         /* Cor do texto (azul escuro elegante) */
     -fx-font-weight: bold;
-
+}
+.text-label-login{
+    -fx-fill:#8f8591;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+.text-label-enterprise{
+    -fx-fill: #8f8591;
+    -fx-font-size: 10;
+    -fx-font-weight: bold;
 }
 
-.text-field-user{
-
+.button-enter{
+    -fx-background-color: #ff960c;
+    -fx-fill: #ffffff;
+    -fx-font-size: 12;
 }
