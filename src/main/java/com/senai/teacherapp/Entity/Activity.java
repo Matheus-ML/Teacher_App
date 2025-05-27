@@ -2,12 +2,38 @@ package com.senai.teacherapp.Entity;
 
 import java.time.LocalDate;
 
+//Classe de Activity com construtores, getters e setters.
 public class Activity {
     private Integer idActivity;
     private String nameActivity;
     private String descriptionActivity;
     private LocalDate dateActivity;
     private Double weightActivity;
+    private Integer idClass;
+
+    public void setIdActivity(Integer idActivity) {
+        this.idActivity = idActivity;
+    }
+
+    public void setNameActivity(String nameActivity) {
+        this.nameActivity = nameActivity;
+    }
+
+    public void setDescriptionActivity(String descriptionActivity) {
+        this.descriptionActivity = descriptionActivity;
+    }
+
+    public void setDateActivity(LocalDate dateActivity) {
+        this.dateActivity = dateActivity;
+    }
+
+    public void setWeightActivity(Double weightActivity) {
+        this.weightActivity = weightActivity;
+    }
+
+    public void setIdClass(Integer idClass) {
+        this.idClass = idClass;
+    }
 
     public Activity() {
     }
@@ -20,11 +46,12 @@ public class Activity {
         this.weightActivity = weightActivity;
     }
 
-    public Activity(String nameActivity, String descriptionActivity, LocalDate dateActivity, Double weightActivity) {
+    public Activity(String nameActivity, String descriptionActivity, LocalDate dateActivity, Double weightActivity, Integer idClass) {
         this.nameActivity = nameActivity;
         this.descriptionActivity = descriptionActivity;
         this.dateActivity = dateActivity;
         this.weightActivity = weightActivity;
+        this.idClass = idClass;
     }
 
     public Integer getIdActivity() {
@@ -45,5 +72,9 @@ public class Activity {
 
     public Double getWeightActivity() {
         return weightActivity;
+    }
+
+    public Integer getIdClass() {
+        return idClass;
     }
 }
