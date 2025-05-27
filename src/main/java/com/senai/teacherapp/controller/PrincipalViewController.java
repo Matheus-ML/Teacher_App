@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+//Classe da tela principal do professor.
 public class PrincipalViewController {
     @FXML
     private Button btnExit;
@@ -21,5 +22,6 @@ public class PrincipalViewController {
 
     @FXML
     private TableColumn<SchoolClass, String> tableName;
+
 
 }
