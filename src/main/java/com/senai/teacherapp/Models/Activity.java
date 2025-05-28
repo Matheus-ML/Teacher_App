@@ -1,4 +1,4 @@
-package com.senai.teacherapp.Entity;
+package com.senai.teacherapp.Models;
 
 import java.time.LocalDate;
 

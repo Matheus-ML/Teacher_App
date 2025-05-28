@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="406.0" style="-fx-background-radius: 15;" styleClass="radius-anchorpane" stylesheets="@styleLogin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.controller.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="406.0" style="-fx-background-radius: 15;" styleClass="radius-anchorpane" stylesheets="@../css/styleLogin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.HelloController">
    <children>
       <TextField fx:id="txtUser" layoutX="218.0" layoutY="113.0" />
       <Text layoutX="218.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tittle-User" text="Usuário" />
@@ -19,12 +19,12 @@
       <Button layoutX="238.0" layoutY="208.0" mnemonicParsing="false" onAction="#btnEnter" prefHeight="25.0" prefWidth="109.0" styleClass="button-enter" text="Entrar" />
       <ImageView fitHeight="42.0" fitWidth="66.0" layoutX="337.0" layoutY="272.0">
          <image>
-            <Image url="@logoOfOurCompany.png" />
+            <Image url="@../media/logoOfOurCompany.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="53.0">
          <image>
-            <Image url="@nameApp.png" />
+            <Image url="@../media/nameApp.png" />
          </image>
       </ImageView>
    </children>

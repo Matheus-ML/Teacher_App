@@ -1,4 +1,4 @@
-package com.senai.teacherapp.controller;
+package com.senai.teacherapp.Controllers;
 
 import javafx.fxml.FXML;
 
@@ -16,7 +16,7 @@ import java.io.IOException;
 public class HelloController {
     @FXML
     void btnEnter(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/principal-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/principal-view.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage();

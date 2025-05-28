@@ -1,4 +1,4 @@
-package com.senai.teacherapp.Entity;
+package com.senai.teacherapp.Models;
 
 public class SchoolClass {
     private Integer idClass;

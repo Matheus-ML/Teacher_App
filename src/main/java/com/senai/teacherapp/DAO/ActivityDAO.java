@@ -1,6 +1,6 @@
 package com.senai.teacherapp.DAO;
 
-import com.senai.teacherapp.Entity.Activity;
+import com.senai.teacherapp.Models.Activity;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,5 +42,7 @@ public class ActivityDAO {
         }
         return activities;
     }
+
+
 }
 
