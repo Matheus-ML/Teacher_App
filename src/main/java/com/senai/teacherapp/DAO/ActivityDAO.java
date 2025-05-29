@@ -12,7 +12,7 @@ import java.util.List;
 public class ActivityDAO {
 
     //Método que adiciona um objeto do tipo Activity ao banco de dados
-    public static void addActivity(Activity act) {
+    public static void addActivity(Activity act) throws SQLException{
         String sql = "INSERT INTO activity (nm_activity, ds_activity, dt_activity, wt_activity) VALUES (?,?,?,?)";
         try (Connection conn = ConnectDB.connectDB();
              PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -20,8 +20,6 @@ public class ActivityDAO {
             ps.setString(2, act.getDescriptionActivity());
             ps.setObject(3, act.getDateActivity());
             ps.setDouble(4, act.getWeightActivity());
-        } catch (SQLException e) {
-            System.out.println("Erro ao inserir activity" + e.getMessage());
         }
     }
 
@@ -43,6 +41,14 @@ public class ActivityDAO {
         return activities;
     }
 
+    public void deleteActivity(int cd_activity) throws SQLException {
+        String sql = "DELETE FROM activity WHERE cd_activity = ?";
+        try(Connection conn = ConnectDB.connectDB();
+        PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, cd_activity);
+            ps.executeUpdate();
+        }
+    }
 
 }
 

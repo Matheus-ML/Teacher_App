@@ -1,33 +1,38 @@
 package com.senai.teacherapp.Models;
 
 public class SchoolClass {
-    private Integer idClass;
-    private String nameClass;
+    private Integer idSchoolClass;
+    private String nameSchoolClass;
     private Integer quantityStudent;
 
     public SchoolClass() {
     }
 
-    public SchoolClass(Integer idClass, String nameClass, Integer quantityStudent) {
-        this.idClass = idClass;
-        this.nameClass = nameClass;
+    public SchoolClass(Integer idSchoolClass, String nameSchoolClass, Integer quantityStudent) {
+        this.idSchoolClass = idSchoolClass;
+        this.nameSchoolClass = nameSchoolClass;
         this.quantityStudent = quantityStudent;
     }
 
-    public SchoolClass(String nameClass, Integer quantityStudent) {
-        this.nameClass = nameClass;
+    public SchoolClass(String nameSchoolClass, Integer quantityStudent) {
+        this.nameSchoolClass = nameSchoolClass;
         this.quantityStudent = quantityStudent;
     }
 
-    public Integer getIdClass() {
-        return idClass;
+    public Integer getIdSchoolClass() {
+        return idSchoolClass;
     }
 
-    public String getNameClass() {
-        return nameClass;
+    public String getNameSchoolClass() {
+        return nameSchoolClass;
     }
 
     public Integer getQuantityStudent() {
         return quantityStudent;
+    }
+
+    @Override
+    public String toString() {
+        return "Turma: " + nameSchoolClass + "Quantidade de Alunos: " + quantityStudent + "\n";
     }
 }
