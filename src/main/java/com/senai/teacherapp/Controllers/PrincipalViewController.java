@@ -1,6 +1,9 @@
 package com.senai.teacherapp.Controllers;
 
+import com.senai.teacherapp.DAO.SchoolClassDAO;
 import com.senai.teacherapp.Models.SchoolClass;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -11,6 +14,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Arrays;
 
 //Classe da tela principal do professor.
@@ -28,48 +33,22 @@ public class PrincipalViewController {
     private TableColumn<SchoolClass, String> tableName;
 
     @FXML
-    private TableColumn<SchoolClass, Void> tableAction;
+    private Button btnDeleteTablePV;
+
+    @FXML
+    private Button listTablePV;
 
     @FXML
     public void initialize(){
-        //Configura as colunas de nome e id da classe SchoolClass na tabela estática principal do professor.
-        tableID.setCellValueFactory(new PropertyValueFactory<>("idClass"));
-        tableName.setCellValueFactory(new PropertyValueFactory<>("nameClass"));
+        tableID.setCellValueFactory(new PropertyValueFactory<>("idSchoolClass"));
+        tableName.setCellValueFactory(new PropertyValueFactory<>("nameSchoolClass"));
 
-        //Adicionar coluna de ação com botão "Excluir" na coluna de Ação da tabela estática principal do professor.
-        Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>> cellFactory = new Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>>() {
-            @Override
-            public  TableCell<SchoolClass, Void> call(final TableColumn<SchoolClass, Void> param) {
-                final TableCell<SchoolClass, Void> cell = new TableCell<>(){
-                    private final Button btn = new Button("Excluir");
-
-                    {
-                        btn.setOnAction(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent actionEvent) {
-                                SchoolClass schoolClass = getTableView().getItems().get(getIndex());
-                                getTableView().getItems().remove(schoolClass);
-                            }
-                        });
-                    }
-                    @Override
-                    public void updateItem(Void item, boolean empty) {
-                        super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            setGraphic(btn);
-                        }
-                    }
-                };
-                return cell;
-            }
-        };
-
-        tableAction.setCellFactory(cellFactory);
-
-        SchoolClass schoolClass1 = new SchoolClass(1,"1° Ano A",30);
-        SchoolClass schoolClass2 = new SchoolClass(2,"2° Ano B",25);
-        tableListStudent.getItems().addAll(Arrays.asList(schoolClass1,schoolClass2));
+        try{
+            SchoolClassDAO dao = new SchoolClassDAO();
+            ObservableList<SchoolClass> list = FXCollections.observableArrayList(dao.listSchoolClass());
+            tableListStudent.setItems(list);
+        } catch (SQLException e){
+            System.out.println("Deu zebra na lista: " + e);
+        }
     }
 }

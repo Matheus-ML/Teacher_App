@@ -14,11 +14,10 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="tableListStudent" layoutX="108.0" layoutY="305.0" prefHeight="208.0" prefWidth="685.0" stylesheets="@../css/principalView.css">
+      <TableView fx:id="tableListStudent" layoutX="177.0" layoutY="300.0" prefHeight="208.0" prefWidth="547.0" stylesheets="@../css/principalView.css">
         <columns>
-          <TableColumn fx:id="tableID" prefWidth="97.0" text="ID" />
-          <TableColumn fx:id="tableName" prefWidth="361.0" text="Nome" />
-            <TableColumn fx:id="tableAction" prefWidth="226.0" text="Ação" />
+          <TableColumn fx:id="tableID" prefWidth="112.0" text="ID" />
+          <TableColumn fx:id="tableName" prefWidth="433.0" text="Nome" />
         </columns>
       </TableView>
       <Text fx:id="txtNameProfessor" layoutX="31.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Professor">
@@ -26,5 +25,7 @@
             <Font size="18.0" />
          </font>
       </Text>
+      <Button fx:id="btnDeleteTablePV" layoutX="790.0" layoutY="369.0" mnemonicParsing="false" text="Excluir" />
+      <Button fx:id="listTablePV" layoutX="782.0" layoutY="414.0" mnemonicParsing="false" text="Visualizar" />
    </children>
 </AnchorPane>

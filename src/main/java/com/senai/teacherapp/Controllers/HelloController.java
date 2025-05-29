@@ -18,13 +18,13 @@ public class HelloController {
     void btnEnter(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/principal-view.fxml"));
         Parent root = fxmlLoader.load();
+        PrincipalViewController pvc = fxmlLoader.getController();
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("Tela Principal");
         stage.setScene(scene);
         stage.show();
         ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
-        /* Stage = disparo, node= prenda-o, source = identifique de onde veio, scene de que cena veio, window e close =  pegue essa janele e feche*/
     }
 
     @FXML
