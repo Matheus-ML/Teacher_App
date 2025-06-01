@@ -1,4 +1,4 @@
-CREATE DATABASE TeacherApp
+CREATE DATABASE TeacherApp;
 
 CREATE TABLE SchoolClass
 (
@@ -26,7 +26,7 @@ cd_login INTEGER AUTO_INCREMENT,
 id_user VARCHAR(50) UNIQUE,
 id_password VARCHAR(16) NOT NULL,
 PRIMARY KEY(cd_login)
-)
+);
 
 INSERT INTO login (id_user, id_password) VALUES
 ("Karize", "karize123"),
@@ -36,16 +36,16 @@ INSERT INTO login (id_user, id_password) VALUES
 
 
 
---CRUD Activity
---Create
+-- CRUD Activity
+-- Create
 INSERT INTO activity (nm_activity, ds_activity, dt_activity, wt_activity) VALUES (?,?,?,?)
 
---List
+-- List
 SELECT cd_activity, nm_activity FROM activity
 
---Delete
+-- Delete
 DELETE FROM activity WHERE cd_activity = ?
 
---CRUD SchoolClass
---Create
+-- CRUD SchoolClass
+-- Create
 INSERT INTO schoolclass (nm_schoolclass, qt_student) VALUES (?,?)
