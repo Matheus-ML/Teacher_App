@@ -9,12 +9,12 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.PrincipalViewController">
    <children>
-      <Button fx:id="btnExit" layoutX="816.0" layoutY="14.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="70.0" styleClass="button-exit" stylesheets="@../css/principalView.css" text="Sair">
+      <Button layoutX="816.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="47.0" prefWidth="70.0" styleClass="button-exit" stylesheets="@../css/principalView.css" text="Sair">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="tableListStudent" layoutX="177.0" layoutY="300.0" prefHeight="208.0" prefWidth="547.0" stylesheets="@../css/principalView.css">
+      <TableView fx:id="tableListStudent" layoutX="177.0" layoutY="300.0" prefHeight="208.0" prefWidth="547.0">
         <columns>
           <TableColumn fx:id="tableID" prefWidth="112.0" text="ID" />
           <TableColumn fx:id="tableName" prefWidth="433.0" text="Nome" />

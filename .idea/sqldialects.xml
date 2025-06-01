@@ -2,6 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/java/com/senai/teacherapp/DAO/ActivityDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/senai/teacherapp/DAO/LoginDAO.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/senai/teacherapp/DAO/SchoolClassDAO.java" dialect="GenericSQL" />
   </component>
 </project>

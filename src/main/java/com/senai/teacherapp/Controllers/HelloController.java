@@ -16,9 +16,11 @@ import java.io.IOException;
 public class HelloController {
     @FXML
     void btnEnter(ActionEvent event) throws IOException {
+        String user = txtUser.getText();
+        String password = txtPassoword.getText();
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/principal-view.fxml"));
         Parent root = fxmlLoader.load();
-        PrincipalViewController pvc = fxmlLoader.getController();
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("Tela Principal");
@@ -32,4 +34,6 @@ public class HelloController {
 
     @FXML
     private TextField txtUser;
+
+
 }
