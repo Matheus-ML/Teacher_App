@@ -2,26 +2,25 @@ package com.senai.teacherapp.Controllers;
 
 import com.senai.teacherapp.DAO.SchoolClassDAO;
 import com.senai.teacherapp.Models.SchoolClass;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.Callback;
+import javafx.scene.text.Text;
 
-import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 //Classe da tela principal do professor.
 public class PrincipalViewController {
     @FXML
-    private Button btnExit;
+    void btnExit(){
+        Platform.exit();
+        System.exit(0);
+    }
 
     @FXML
     private TableView<SchoolClass> tableListStudent;
@@ -51,4 +50,7 @@ public class PrincipalViewController {
             System.out.println("Deu zebra na lista: " + e);
         }
     }
+
+    @FXML
+    private Text txtNameProfessor;
 }
