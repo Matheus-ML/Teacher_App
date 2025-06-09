@@ -12,10 +12,12 @@ import java.util.List;
 public class SchoolClassDAO {
     public void addSchoolClass(SchoolClass schoolClass) throws SQLException {
         String sql = "INSERT INTO schoolclass (nm_schoolclass, qt_student) VALUES (?,?)";
+
         try (Connection conn = ConnectDB.connectDB();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, schoolClass.getNameSchoolClass());
             ps.setInt(2, schoolClass.getQuantityStudent());
+            ps.executeUpdate();
         }
     }
 

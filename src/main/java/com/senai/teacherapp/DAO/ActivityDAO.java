@@ -20,6 +20,7 @@ public class ActivityDAO {
             ps.setString(2, act.getDescriptionActivity());
             ps.setObject(3, act.getDateActivity());
             ps.setDouble(4, act.getWeightActivity());
+            ps.executeUpdate();
         }
     }
 

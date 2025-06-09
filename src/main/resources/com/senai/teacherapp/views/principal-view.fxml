@@ -9,17 +9,18 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.PrincipalViewController">
    <children>
+      <TableView fx:id="tableListStudent" layoutX="31.0" layoutY="369.0" prefHeight="208.0" prefWidth="547.0">
+        <columns>
+          <TableColumn fx:id="tableID" prefWidth="112.0" text="ID" />
+          <TableColumn fx:id="tableName" prefWidth="308.0" text="Nome" />
+            <TableColumn fx:id="tableAction" prefWidth="126.0" text="Ação" />
+        </columns>
+      </TableView>
       <Button layoutX="816.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="47.0" prefWidth="70.0" styleClass="button-exit" stylesheets="@../css/principalView.css" text="Sair">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="tableListStudent" layoutX="177.0" layoutY="300.0" prefHeight="208.0" prefWidth="547.0">
-        <columns>
-          <TableColumn fx:id="tableID" prefWidth="112.0" text="ID" />
-          <TableColumn fx:id="tableName" prefWidth="433.0" text="Nome" />
-        </columns>
-      </TableView>
       <Text fx:id="txtNameProfessor" layoutX="31.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Professor">
          <font>
             <Font size="18.0" />
@@ -27,5 +28,9 @@
       </Text>
       <Button fx:id="btnDeleteTablePV" layoutX="790.0" layoutY="369.0" mnemonicParsing="false" text="Excluir" />
       <Button fx:id="listTablePV" layoutX="782.0" layoutY="414.0" mnemonicParsing="false" text="Visualizar" />
+      <Button layoutX="31.0" layoutY="81.0" mnemonicParsing="false" onAction="#btnOnRegister" prefHeight="41.0" prefWidth="154.0" styleClass="button-register" stylesheets="@../css/principalView.css" text="Cadastre uma Turma!">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

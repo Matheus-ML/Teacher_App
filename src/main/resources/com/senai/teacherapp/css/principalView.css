@@ -4,3 +4,9 @@
     -fx-border-with: 0;
     -fx-cursor: hand;
 }
+
+.button-register {
+    -fx-background-color: transparent;
+    -fx-border-color: #000000;
+    -fx-cursor: hand;
+}

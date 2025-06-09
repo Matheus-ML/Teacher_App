@@ -1,12 +1,12 @@
-.radius-anchorpane{  /*Estilização do fundo de tela*/
+.radius-anchorpane{
     -fx-background-color: #ffffff;
     -fx-border-width: 3;
     -fx-border-color: #f8ecec;
     -fx-border-radius: 20;
 }
-.tittle-User{  /*Estilização do titulo "Usuário"*/
+.tittle-User{
     -fx-font-size: 14px;
-    -fx-fill: #8f8591;         /* Cor do texto (azul escuro elegante) */
+    -fx-fill: #8f8591;
     -fx-font-weight: bold;
 }
 .text-label-login{
@@ -21,7 +21,7 @@
 }
 
 .button-enter{
-    -fx-background-color: #ff960c;
+    -fx-background-color: #ff8b00;
     -fx-fill: #ffffff;
     -fx-font-size: 12;
 }

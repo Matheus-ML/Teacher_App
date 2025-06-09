@@ -1,14 +1,14 @@
 package com.senai.teacherapp.Models;
 
 public class SchoolClass {
-    private Integer idSchoolClass;
+    private int idSchoolClass;
     private String nameSchoolClass;
     private Integer quantityStudent;
 
     public SchoolClass() {
     }
 
-    public SchoolClass(Integer idSchoolClass, String nameSchoolClass, Integer quantityStudent) {
+    public SchoolClass(int idSchoolClass, String nameSchoolClass, Integer quantityStudent) {
         this.idSchoolClass = idSchoolClass;
         this.nameSchoolClass = nameSchoolClass;
         this.quantityStudent = quantityStudent;
@@ -19,7 +19,7 @@ public class SchoolClass {
         this.quantityStudent = quantityStudent;
     }
 
-    public Integer getIdSchoolClass() {
+    public int getIdSchoolClass() {
         return idSchoolClass;
     }
 
