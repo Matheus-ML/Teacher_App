@@ -27,7 +27,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="registerTableView" layoutX="390.0" layoutY="88.0" prefHeight="307.0" prefWidth="467.0" stylesheets="@../css/registerView.css">
+      <TableView fx:id="registerTableView" layoutX="390.0" layoutY="88.0" prefHeight="307.0" prefWidth="467.0" stylesheets="@../css/registerTableView.css">
         <columns>
           <TableColumn fx:id="tableID" prefWidth="50.0" text="ID" />
           <TableColumn fx:id="tableName" prefWidth="334.0" text="Nome" />

@@ -21,14 +21,14 @@
       <Text layoutX="218.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tittle-User" text="Senha" />
       <Text layoutX="172.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-label-enterprise" text="Desenvolvido por M&amp;B Enterprise " />
       <Button layoutX="238.0" layoutY="208.0" mnemonicParsing="false" onAction="#btnEnter" prefHeight="25.0" prefWidth="109.0" styleClass="button-enter" text="Entrar" />
-      <ImageView fitHeight="42.0" fitWidth="66.0" layoutX="337.0" layoutY="272.0">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="52.0">
          <image>
-            <Image url="@../media/logoOfOurCompany.png" />
+            <Image url="@../media/teacherApp.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="53.0">
+      <ImageView fitHeight="54.0" fitWidth="61.0" layoutX="337.0" layoutY="267.0">
          <image>
-            <Image url="@../media/nameApp.png" />
+            <Image url="@../media/MB.png" />
          </image>
       </ImageView>
    </children>
