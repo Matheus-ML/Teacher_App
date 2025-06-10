@@ -14,7 +14,6 @@ cd_activity INTEGER AUTO_INCREMENT,
 nm_activity VARCHAR(100) NOT NULL,
 ds_activity VARCHAR(255),
 dt_activity DATE NOT NULL,
-wt_activity DOUBLE,
 cd_schoolclass INTEGER,
 PRIMARY KEY (cd_activity),
 FOREIGN KEY(cd_schoolclass) REFERENCES schoolclass (cd_schoolclass) ON DELETE CASCADE

@@ -1,5 +1,6 @@
 package com.senai.teacherapp.DAO;
 
+import com.senai.teacherapp.Models.Notification;
 import com.senai.teacherapp.Models.SchoolClass;
 
 import java.sql.Connection;
@@ -16,7 +17,11 @@ public class SchoolClassDAO {
         try (Connection conn = ConnectDB.connectDB();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, schoolClass.getNameSchoolClass());
-            ps.setInt(2, schoolClass.getQuantityStudent());
+            if (schoolClass.getQuantityStudent()>0) {
+                ps.setInt(2, schoolClass.getQuantityStudent());
+            } else {
+                new Notification().ErrorAlert("Erro", "A quantidade de alunos deve ser maior que 0");
+            }
             ps.executeUpdate();
         }
     }

@@ -8,7 +8,6 @@ public class Activity {
     private String nameActivity;
     private String descriptionActivity;
     private LocalDate dateActivity;
-    private Double weightActivity;
     private Integer idClass;
 
     public void setIdActivity(Integer idActivity) {
@@ -27,10 +26,6 @@ public class Activity {
         this.dateActivity = dateActivity;
     }
 
-    public void setWeightActivity(Double weightActivity) {
-        this.weightActivity = weightActivity;
-    }
-
     public void setIdClass(Integer idClass) {
         this.idClass = idClass;
     }
@@ -38,24 +33,24 @@ public class Activity {
     public Activity() {
     }
 
-    public Activity(Integer idActivity, String nameActivity, String descriptionActivity, LocalDate dateActivity, Double weightActivity) {
+    public Activity(Integer idActivity, String nameActivity, String descriptionActivity, LocalDate dateActivity) {
         this.idActivity = idActivity;
         this.nameActivity = nameActivity;
         this.descriptionActivity = descriptionActivity;
         this.dateActivity = dateActivity;
-        this.weightActivity = weightActivity;
     }
 
-    public Activity(String nameActivity, String descriptionActivity, LocalDate dateActivity, Double weightActivity, Integer idClass) {
+    public Activity(String nameActivity, String descriptionActivity, LocalDate dateActivity, Integer idClass) {
         this.nameActivity = nameActivity;
         this.descriptionActivity = descriptionActivity;
         this.dateActivity = dateActivity;
-        this.weightActivity = weightActivity;
         this.idClass = idClass;
     }
 
-    public Integer getIdActivity() {
-        return idActivity;
+    public Activity(String nameActivity, String descriptionActivity, LocalDate dateActivity) {
+        this.nameActivity = nameActivity;
+        this.descriptionActivity = descriptionActivity;
+        this.dateActivity = dateActivity;
     }
 
     public String getNameActivity() {
@@ -68,10 +63,6 @@ public class Activity {
 
     public LocalDate getDateActivity() {
         return dateActivity;
-    }
-
-    public Double getWeightActivity() {
-        return weightActivity;
     }
 
     public Integer getIdClass() {

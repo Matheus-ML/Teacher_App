@@ -22,7 +22,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="57.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnRegisterSchoolClass" prefHeight="36.0" prefWidth="89.0" text="Cadastrar">
+      <Button layoutX="57.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnRegisterSchoolClass" prefHeight="36.0" prefWidth="89.0" text="Confirmar">
          <font>
             <Font name="Arial" size="14.0" />
          </font>

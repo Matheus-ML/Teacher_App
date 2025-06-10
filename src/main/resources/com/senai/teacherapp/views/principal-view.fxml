@@ -9,11 +9,13 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.PrincipalViewController">
    <children>
-      <TableView fx:id="tableListStudent" layoutX="31.0" layoutY="369.0" prefHeight="208.0" prefWidth="547.0" stylesheets="@../css/principalTableView.css">
+      <TableView fx:id="tableListStudent" layoutX="89.0" layoutY="285.0" prefHeight="267.0" prefWidth="751.0" stylesheets="@../css/principalTableView.css">
         <columns>
           <TableColumn fx:id="tableID" prefWidth="112.0" text="ID" />
           <TableColumn fx:id="tableName" prefWidth="308.0" text="Nome" />
-            <TableColumn fx:id="tableAction" prefWidth="126.0" text="Ação" />
+            <TableColumn fx:id="tableStudents" prefWidth="115.0" text="Alunos" />
+            <TableColumn fx:id="tableDelete" prefWidth="105.0" text="Excluir" />
+            <TableColumn fx:id="tableView" prefWidth="110.0" text="Visualizar" />
         </columns>
       </TableView>
       <Button layoutX="816.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="47.0" prefWidth="70.0" styleClass="button-exit" stylesheets="@../css/principalView.css" text="Sair">
@@ -26,9 +28,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="btnDeleteTablePV" layoutX="790.0" layoutY="369.0" mnemonicParsing="false" text="Excluir" />
-      <Button fx:id="listTablePV" layoutX="782.0" layoutY="414.0" mnemonicParsing="false" text="Visualizar" />
-      <Button layoutX="31.0" layoutY="81.0" mnemonicParsing="false" onAction="#btnOnRegister" prefHeight="41.0" prefWidth="154.0" styleClass="button-register" stylesheets="@../css/principalView.css" text="Cadastre uma Turma!">
+      <Button layoutX="31.0" layoutY="119.0" mnemonicParsing="false" onAction="#btnOnRegister" prefHeight="41.0" prefWidth="154.0" styleClass="button-register" stylesheets="@../css/principalView.css" text="Cadastre uma Turma!">
          <font>
             <Font size="14.0" />
          </font></Button>

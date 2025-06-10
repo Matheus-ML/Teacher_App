@@ -24,26 +24,13 @@ import java.util.Optional;
 
 //Classe da tela principal do professor.
 public class PrincipalViewController extends Notification {
-    @FXML
-    void btnExit() {
-        InformationAlert("Mensagem", "Você deseja sair do aplicativo?");
-    }
-
-    @FXML
-    private TableView<SchoolClass> tableListStudent;
-    @FXML
-    private TableColumn<SchoolClass, Integer> tableID;
-    @FXML
-    private TableColumn<SchoolClass, String> tableName;
-    @FXML
-    private TableColumn<SchoolClass, Void> tableAction;
-
-    @FXML
-    private Button btnDeleteTablePV;
-    @FXML
-    private Button listTablePV;
-    @FXML
-    private Text txtNameProfessor;
+    @FXML private TableView<SchoolClass> tableListStudent;
+    @FXML private TableColumn<SchoolClass, Integer> tableID;
+    @FXML private TableColumn<SchoolClass, String> tableName;
+    @FXML private TableColumn<SchoolClass, Void> tableDelete;
+    @FXML private TableColumn<SchoolClass, Void> tableView;
+    @FXML private Text txtNameProfessor;
+    @FXML private TableColumn<SchoolClass, Integer> tableStudents;
 
     private String professorName;
 
@@ -55,6 +42,11 @@ public class PrincipalViewController extends Notification {
     }
 
     @FXML
+    void btnExit() {
+        InformationAlert("Mensagem", "Você deseja sair do aplicativo?");
+    }
+
+    @FXML
     public void initialize() {
         if (professorName != null) {
             txtNameProfessor.setText(professorName);
@@ -62,6 +54,7 @@ public class PrincipalViewController extends Notification {
 
         tableID.setCellValueFactory(new PropertyValueFactory<>("idSchoolClass"));
         tableName.setCellValueFactory(new PropertyValueFactory<>("nameSchoolClass"));
+        tableStudents.setCellValueFactory(new PropertyValueFactory<>("quantityStudent"));
 
         try {
             SchoolClassDAO dao = new SchoolClassDAO();
@@ -71,6 +64,7 @@ public class PrincipalViewController extends Notification {
             System.out.println("Deu zebra na lista: " + e);
         }
         addBtnDelete();
+        addBtnView();
     }
 
     @FXML
@@ -157,6 +151,63 @@ public class PrincipalViewController extends Notification {
                     }
                 };
 
-        tableAction.setCellFactory(cellFactory);
+        tableDelete.setCellFactory(cellFactory);
+    }
+
+    private void addBtnView() {
+        Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>> cellFactory =
+                new Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>>() {
+
+                    @Override
+                    public TableCell<SchoolClass, Void> call(final TableColumn<SchoolClass, Void> param) {
+
+                        TableCell<SchoolClass, Void> cell = new TableCell<SchoolClass, Void>() {
+
+                            private final Button btn = new Button("Visualizar");
+
+                            {
+                                btn.setOnAction(new EventHandler<ActionEvent>() {
+
+                                    @Override
+                                    public void handle(ActionEvent event) {
+                                        SchoolClass sc = getTableView().getItems().get(getIndex());
+
+                                        try{
+                                            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/activity-view.fxml"));
+                                            Parent root = loader.load();
+
+                                            loader.getController();
+                                            ActivityViewController avc = loader.getController();
+                                            avc.setSchoolClassId(sc.getIdSchoolClass());
+
+                                            Scene scene = new Scene(root);
+                                            Stage stage = new Stage();
+                                            stage.setTitle("Atividades da Turma: " + sc.getNameSchoolClass());
+                                            stage.setScene(scene);
+                                            stage.show();
+
+                                        } catch (IOException e){
+                                            new Notification().ErrorAlert("Erro", "Erro ao abrir tela de atividades!");
+                                        }
+                                    }
+                                });
+                            }
+
+                            @Override
+                            protected void updateItem(Void sc, boolean empty) {
+                                super.updateItem(sc, empty);
+
+                                if (empty){
+                                    setGraphic(null);
+                                } else {
+                                    setGraphic(btn);
+                                }
+                            }
+                        };
+                        return cell;
+                    }
+                };
+
+        tableView.setCellFactory(cellFactory);
     }
 }

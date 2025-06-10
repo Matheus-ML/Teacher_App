@@ -44,11 +44,13 @@ public class RegisterSchoolClassController {
         String qtStudent = txtRegisterQtStudent.getText();
 
         if(nameClass.isBlank() || qtStudent.isBlank()){
-            new Notification().ErrorAlert("Campos vázios", "Por favor preencha o nome da turma e quantidade de Alunos!");
+            new Notification().ErrorAlert("Campos vázios", "Por favor preencha todos os campos!");
+            return;
         }
 
         if(Integer.parseInt(qtStudent) <= 0){
             new Notification().ErrorAlert("Quantidade Inválida", "A quantidade de alunos precisa ser superior a 0!");
+            return;
         }
 
         SchoolClass sc = new SchoolClass(nameClass, Integer.parseInt(qtStudent));
