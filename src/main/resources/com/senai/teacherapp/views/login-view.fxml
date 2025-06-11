@@ -11,9 +11,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="305.0" prefWidth="406.0" style="-fx-background-radius: 15;" styleClass="radius-anchorpane" stylesheets="@../css/styleLogin.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.LoginController">
    <children>
-      <TextField fx:id="txtUser" layoutX="218.0" layoutY="113.0" />
+      <TextField fx:id="txtUser" layoutX="218.0" layoutY="113.0" promptText="Digite seu usuário..." />
       <Text layoutX="218.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tittle-User" text="Usuário" />
-      <PasswordField fx:id="txtPassoword" layoutX="218.0" layoutY="162.0" prefHeight="25.0" prefWidth="149.0" />
+      <PasswordField fx:id="txtPassoword" layoutX="218.0" layoutY="162.0" prefHeight="25.0" prefWidth="149.0" promptText="Digite sua senha..." />
       <Text layoutX="223.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-label-login" text="Seja bem-vindo!">
          <font>
             <Font size="14.0" />

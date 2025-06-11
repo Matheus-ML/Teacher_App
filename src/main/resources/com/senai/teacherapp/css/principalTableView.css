@@ -1,42 +1,78 @@
-/* Estilo geral da TableView */
+/* Estilo geral da TableView - mais limpo e moderno */
 .table-view {
-    -fx-background-color: #f9f9f9;
-    -fx-border-color: #ddd;
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
     -fx-border-radius: 8px;
     -fx-padding: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 6, 0, 0, 2); /* Sintaxe correta para JavaFX */
 }
 
-/* Cabeçalho das colunas */
+/* Cabeçalho das colunas - mais elegante */
 .table-view .column-header-background {
-    -fx-background-color: #98bd25;
+    -fx-background-color: linear-gradient(to bottom, #3CBA31, #34a72e); /* Gradiente sutil no verde */
     -fx-background-radius: 8px 8px 0 0;
-    -fx-padding: 0 0 5px 0;
+    -fx-padding: 0 0 3px 0;
 }
 
-.table-view .column-header {
+.table-view .column-header,
+.table-view .column-header .label {
     -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px 12px;
 }
 
-/* Linhas da tabela */
+/* Linhas da tabela - mais legíveis */
 .table-row-cell {
     -fx-background-color: white;
-    -fx-border-color: #f0f0f0;
-    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #f5f5f5; /* Linhas divisórias mais suaves */
+    -fx-border-width: 0 0 1px 0;
+    -fx-cell-size: 40px; /* Altura consistente para as linhas */
 }
 
 .table-row-cell:odd {
-    -fx-background-color: #f8f8f8;
+    -fx-background-color: #fafafa; /* Fundo alternado quase branco */
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #45724c;
+    -fx-background-color: #3CBA31; /* Verde do projeto para seleção */
     -fx-text-fill: white;
 }
 
-/* Barra de rolagem */
+/* Células - melhor espaçamento e alinhamento */
+.table-cell {
+    -fx-padding: 10px 12px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 13px;
+    -fx-text-fill: #333333; /* Texto mais escuro para melhor contraste */
+    -fx-border-color: transparent;
+}
+
+/* Efeito hover - mais sutil */
+.table-row-cell:hover {
+    -fx-background-color: #f0f9ee !important; /* Verde muito claro para hover */
+}
+
+/* Barra de rolagem - integrada ao design */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0 2px 0 0;
+}
+
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #d8d8d8;
+    -fx-background-radius: 4px;
+}
+
+.table-view .scroll-bar:vertical .increment-button,
+.table-view .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+/* Esconder barra de rolagem horizontal */
 .table-view .scroll-bar:horizontal {
     -fx-opacity: 0;
     -fx-pref-height: 0;
@@ -44,18 +80,7 @@
     -fx-max-height: 0;
 }
 
-.table-view .scroll-bar:vertical {
-    -fx-background-color: transparent;
-}
-
-/* Células */
-.table-cell {
-    -fx-padding: 8 10 8 10;
-    -fx-alignment: CENTER_LEFT;
-    -fx-font-size: 13px;
-}
-
-/* Efeito hover */
-.table-row-cell:hover {
-    -fx-background-color: #e3f2fd !important;
+/* Destaque para cabeçalho quando hover */
+.table-view .column-header:hover {
+    -fx-background-color: #2e9c26; /* Verde um pouco mais escuro no hover */
 }

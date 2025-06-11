@@ -22,16 +22,16 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="57.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnRegisterSchoolClass" prefHeight="36.0" prefWidth="89.0" text="Confirmar">
+      <Button layoutX="57.0" layoutY="294.0" mnemonicParsing="false" onAction="#btnRegisterSchoolClass" prefHeight="36.0" prefWidth="115.0" styleClass="button-register" stylesheets="@../css/principalView.css" text="Confirmar">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="registerTableView" layoutX="390.0" layoutY="88.0" prefHeight="307.0" prefWidth="467.0" stylesheets="@../css/registerTableView.css">
+      <TableView fx:id="registerTableView" layoutX="390.0" layoutY="88.0" prefHeight="307.0" prefWidth="467.0" stylesheets="@../css/principalTableView.css">
         <columns>
-          <TableColumn fx:id="tableID" prefWidth="50.0" text="ID" />
-          <TableColumn fx:id="tableName" prefWidth="334.0" text="Nome" />
-            <TableColumn fx:id="tableStudents" prefWidth="82.0" text="Alunos" />
+          <TableColumn fx:id="tableID" prefWidth="64.0" text="ID" />
+          <TableColumn fx:id="tableName" prefWidth="305.0" text="Nome" />
+            <TableColumn fx:id="tableStudents" prefWidth="96.0" text="Alunos" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

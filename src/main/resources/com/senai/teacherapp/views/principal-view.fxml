@@ -7,28 +7,28 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.PrincipalViewController">
+<AnchorPane prefHeight="475.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.PrincipalViewController">
    <children>
-      <TableView fx:id="tableListStudent" layoutX="89.0" layoutY="285.0" prefHeight="267.0" prefWidth="751.0" stylesheets="@../css/principalTableView.css">
+      <TableView fx:id="tableListStudent" layoutX="49.0" layoutY="187.0" prefHeight="267.0" prefWidth="761.0" stylesheets="@../css/principalTableView.css">
         <columns>
           <TableColumn fx:id="tableID" prefWidth="112.0" text="ID" />
-          <TableColumn fx:id="tableName" prefWidth="308.0" text="Nome" />
-            <TableColumn fx:id="tableStudents" prefWidth="115.0" text="Alunos" />
-            <TableColumn fx:id="tableDelete" prefWidth="105.0" text="Excluir" />
-            <TableColumn fx:id="tableView" prefWidth="110.0" text="Visualizar" />
+          <TableColumn fx:id="tableName" prefWidth="337.0" text="Nome" />
+            <TableColumn fx:id="tableStudents" prefWidth="100.0" text="Alunos" />
+            <TableColumn fx:id="tableDelete" prefWidth="99.0" text="Excluir" />
+            <TableColumn fx:id="tableView" prefWidth="112.0" text="Visualizar" />
         </columns>
       </TableView>
-      <Button layoutX="816.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="47.0" prefWidth="70.0" styleClass="button-exit" stylesheets="@../css/principalView.css" text="Sair">
+      <Button layoutX="730.0" layoutY="13.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="47.0" prefWidth="70.0" styleClass="button-exit" stylesheets="@../css/principalView.css" text="Sair">
          <font>
-            <Font size="18.0" />
+            <Font name="Georgia" size="20.0" />
          </font>
       </Button>
-      <Text fx:id="txtNameProfessor" layoutX="31.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Professor">
+      <Text fx:id="txtNameProfessor" layoutX="49.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Professor">
          <font>
-            <Font size="18.0" />
+            <Font name="Georgia Bold" size="20.0" />
          </font>
       </Text>
-      <Button layoutX="31.0" layoutY="119.0" mnemonicParsing="false" onAction="#btnOnRegister" prefHeight="41.0" prefWidth="154.0" styleClass="button-register" stylesheets="@../css/principalView.css" text="Cadastre uma Turma!">
+      <Button layoutX="49.0" layoutY="106.0" mnemonicParsing="false" onAction="#btnOnRegister" prefHeight="41.0" prefWidth="207.0" styleClass="button-register" stylesheets="@../css/principalView.css" text="Cadastre uma Turma!">
          <font>
             <Font size="14.0" />
          </font></Button>

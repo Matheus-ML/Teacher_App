@@ -1,11 +1,11 @@
 .radius-anchorpane{
     -fx-background-color: #ffffff;
     -fx-border-width: 3;
-    -fx-border-color: #f8ecec;
+    -fx-border-color: #ffffff;
     -fx-border-radius: 20;
 }
 .tittle-User{
-    -fx-font-size: 14px;
+    -fx-font-size: 15px;
     -fx-fill: #8f8591;
     -fx-font-weight: bold;
 }

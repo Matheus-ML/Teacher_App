@@ -4,16 +4,20 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="520.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.ActivityViewController">
+<AnchorPane prefHeight="396.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.ActivityViewController">
    <children>
-      <Button layoutX="704.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnOnRegisterActivity" text="Cadastrar Atividade" />
-      <TableView fx:id="tableActivity" layoutX="39.0" layoutY="188.0" prefHeight="264.0" prefWidth="785.0">
+      <Button layoutX="354.0" layoutY="31.0" mnemonicParsing="false" onAction="#btnOnRegisterActivity" prefHeight="45.0" prefWidth="189.0" styleClass="button-register" stylesheets="@../css/principalView.css" text="Cadastrar Atividade">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TableView fx:id="tableActivity" layoutX="28.0" layoutY="109.0" prefHeight="264.0" prefWidth="842.0" stylesheets="@../css/principalTableView.css">
         <columns>
-          <TableColumn fx:id="tableActivityId" prefWidth="50.0" text="ID" />
-          <TableColumn fx:id="tableActivityName" prefWidth="193.0" text="Nomes das Atividades" />
-            <TableColumn fx:id="tableActivityDate" prefWidth="96.0" text="Data de Entrega" />
-            <TableColumn fx:id="tableActivityDescription" prefWidth="445.0" text="Descrição das Atividades" />
+          <TableColumn fx:id="tableActivityId" prefWidth="43.0" text="ID" />
+          <TableColumn fx:id="tableActivityName" prefWidth="208.0" text="Nomes das Atividades" />
+            <TableColumn fx:id="tableActivityDate" prefWidth="112.0" text="Data de Entrega" />
+            <TableColumn fx:id="tableActivityDescription" prefWidth="478.0" text="Descrição das Atividades" />
         </columns>
       </TableView>
    </children>

@@ -3,10 +3,14 @@
     -fx-border-color: transparent;
     -fx-border-with: 0;
     -fx-cursor: hand;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 20px;
 }
 
 .button-register {
-    -fx-background-color: transparent;
-    -fx-border-color: #000000;
+    -fx-background-color: #3CBA31;
+    -fx-border-color: transparent;
     -fx-cursor: hand;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 18px;
 }

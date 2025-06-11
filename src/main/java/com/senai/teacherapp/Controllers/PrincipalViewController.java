@@ -77,6 +77,14 @@ public class PrincipalViewController extends Notification {
         tableStudents.setSortable(false);
         tableStudents.setReorderable(false);
         tableStudents.setResizable(false);
+
+        tableView.setSortable(false);
+        tableView.setReorderable(false);
+        tableView.setResizable(false);
+
+        tableDelete.setSortable(false);
+        tableDelete.setReorderable(false);
+        tableDelete.setResizable(false);
     }
 
     public void loadSchoolClassTable() {
