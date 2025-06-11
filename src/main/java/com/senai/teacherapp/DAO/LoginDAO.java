@@ -1,6 +1,7 @@
 package com.senai.teacherapp.DAO;
 
 import com.senai.teacherapp.Models.Login;
+import com.senai.teacherapp.Models.UserSession;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +10,7 @@ import java.sql.SQLException;
 
 public class LoginDAO {
 
-    public String getLogin(Login login) throws SQLException {
+    public UserSession getLogin(Login login) throws SQLException {
             String sql = "SELECT * FROM login WHERE id_user = ? AND id_password = ?";
 
             try(Connection conn = ConnectDB.connectDB();
@@ -19,7 +20,9 @@ public class LoginDAO {
 
                 try(ResultSet rs = ps.executeQuery()){
                     if(rs.next()){
-                        return rs.getString("id_nameProfessor");
+                        int id = rs.getInt("cd_login");
+                        String name = rs.getString("id_nameProfessor");
+                        return new UserSession(id, name);
                     }
 
                 }

@@ -14,6 +14,7 @@ public class StartApp extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(StartApp.class.getResource("/com/senai/teacherapp/views/login-view.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         stage.setTitle("TeacherApp");
         stage.setScene(scene);
         stage.show();

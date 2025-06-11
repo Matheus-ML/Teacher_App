@@ -1,8 +1,10 @@
 package com.senai.teacherapp.Controllers;
 
+import com.senai.teacherapp.DAO.ActivityDAO;
 import com.senai.teacherapp.DAO.SchoolClassDAO;
 import com.senai.teacherapp.Models.Notification;
 import com.senai.teacherapp.Models.SchoolClass;
+import com.senai.teacherapp.Models.UserSession;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,21 +26,31 @@ import java.util.Optional;
 
 //Classe da tela principal do professor.
 public class PrincipalViewController extends Notification {
-    @FXML private TableView<SchoolClass> tableListStudent;
-    @FXML private TableColumn<SchoolClass, Integer> tableID;
-    @FXML private TableColumn<SchoolClass, String> tableName;
-    @FXML private TableColumn<SchoolClass, Void> tableDelete;
-    @FXML private TableColumn<SchoolClass, Void> tableView;
-    @FXML private Text txtNameProfessor;
-    @FXML private TableColumn<SchoolClass, Integer> tableStudents;
+    @FXML
+    private TableView<SchoolClass> tableListStudent;
+    @FXML
+    private TableColumn<SchoolClass, Integer> tableID;
+    @FXML
+    private TableColumn<SchoolClass, String> tableName;
+    @FXML
+    private TableColumn<SchoolClass, Void> tableDelete;
+    @FXML
+    private TableColumn<SchoolClass, Void> tableView;
+    @FXML
+    private Text txtNameProfessor;
+    @FXML
+    private TableColumn<SchoolClass, Integer> tableStudents;
 
-    private String professorName;
+    private UserSession session;
 
-    public void setProfessorName(String professorName) {
-        this.professorName = professorName;
+    public void setSession(UserSession session) {
+        this.session = session;
         if (txtNameProfessor != null) {
-            txtNameProfessor.setText(professorName);
+            txtNameProfessor.setText(session.getName());
         }
+
+        loadTableCell();
+        loadSchoolClassTable();
     }
 
     @FXML
@@ -46,19 +58,31 @@ public class PrincipalViewController extends Notification {
         InformationAlert("Mensagem", "Você deseja sair do aplicativo?");
     }
 
-    @FXML
-    public void initialize() {
-        if (professorName != null) {
-            txtNameProfessor.setText(professorName);
-        }
-
+    public void loadTableCell() {
         tableID.setCellValueFactory(new PropertyValueFactory<>("idSchoolClass"));
         tableName.setCellValueFactory(new PropertyValueFactory<>("nameSchoolClass"));
         tableStudents.setCellValueFactory(new PropertyValueFactory<>("quantityStudent"));
+        adjustmentTable();
+    }
 
+    public void adjustmentTable() {
+        tableID.setSortable(false);
+        tableID.setReorderable(false);
+        tableID.setResizable(false);
+
+        tableName.setSortable(false);
+        tableName.setReorderable(false);
+        tableName.setResizable(false);
+
+        tableStudents.setSortable(false);
+        tableStudents.setReorderable(false);
+        tableStudents.setResizable(false);
+    }
+
+    public void loadSchoolClassTable() {
         try {
             SchoolClassDAO dao = new SchoolClassDAO();
-            ObservableList<SchoolClass> list = FXCollections.observableArrayList(dao.listSchoolClass());
+            ObservableList<SchoolClass> list = FXCollections.observableArrayList(dao.listSchoolClass(session.getId()));
             tableListStudent.setItems(list);
         } catch (SQLException e) {
             System.out.println("Deu zebra na lista: " + e);
@@ -71,8 +95,14 @@ public class PrincipalViewController extends Notification {
     void btnOnRegister(ActionEvent event) throws IOException {
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/register-schoolclass-view.fxml"));
         Parent root = fxml.load();
+
+        RegisterSchoolClassController rac = fxml.getController();
+        rac.setSession(session);
+        rac.setOnSchoolClassRegister(() -> loadSchoolClassTable());
+
         Scene scene = new Scene(root);
         Stage stage = new Stage();
+        stage.setResizable(false);
         stage.setTitle("Tela de Cadastrar Turmas");
         stage.setScene(scene);
         stage.show();
@@ -124,6 +154,16 @@ public class PrincipalViewController extends Notification {
                                         Optional<ButtonType> resultado = confirmationMessage.showAndWait();
                                         if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
                                             int id = sc.getIdSchoolClass();
+                                            try {
+                                                ActivityDAO actDAO = new ActivityDAO();
+                                                boolean hasActivities = actDAO.hasActivities(id);
+                                                if (hasActivities) {
+                                                    new Notification().ErrorAlert("Exclusão Bloqueada", "Não é possível excluir uma turma que tem atividades pendentes.");
+                                                    return;
+                                                }
+                                            } catch (SQLException e) {
+                                                e.printStackTrace();
+                                            }
 
                                             try {
                                                 new SchoolClassDAO().deleteSchoolClass(id);
@@ -172,7 +212,7 @@ public class PrincipalViewController extends Notification {
                                     public void handle(ActionEvent event) {
                                         SchoolClass sc = getTableView().getItems().get(getIndex());
 
-                                        try{
+                                        try {
                                             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/activity-view.fxml"));
                                             Parent root = loader.load();
 
@@ -182,11 +222,12 @@ public class PrincipalViewController extends Notification {
 
                                             Scene scene = new Scene(root);
                                             Stage stage = new Stage();
+                                            stage.setResizable(false);
                                             stage.setTitle("Atividades da Turma: " + sc.getNameSchoolClass());
                                             stage.setScene(scene);
                                             stage.show();
 
-                                        } catch (IOException e){
+                                        } catch (IOException e) {
                                             new Notification().ErrorAlert("Erro", "Erro ao abrir tela de atividades!");
                                         }
                                     }
@@ -197,7 +238,7 @@ public class PrincipalViewController extends Notification {
                             protected void updateItem(Void sc, boolean empty) {
                                 super.updateItem(sc, empty);
 
-                                if (empty){
+                                if (empty) {
                                     setGraphic(null);
                                 } else {
                                     setGraphic(btn);

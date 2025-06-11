@@ -5,7 +5,9 @@ CREATE TABLE SchoolClass
 cd_schoolclass INTEGER AUTO_INCREMENT,
 nm_schoolclass VARCHAR(40) NOT NULL,
 qt_student INTEGER NOT NULL,
-PRIMARY KEY(cd_schoolclass)
+cd_login INTEGER,
+PRIMARY KEY(cd_schoolclass),
+    FOREIGN KEY (cd_login) REFERENCES login (cd_login) ON DELETE CASCADE
 );
 
 CREATE TABLE Activity

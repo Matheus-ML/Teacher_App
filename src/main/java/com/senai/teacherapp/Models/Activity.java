@@ -53,6 +53,10 @@ public class Activity {
         this.dateActivity = dateActivity;
     }
 
+    public Integer getIdActivity() {
+        return idActivity;
+    }
+
     public String getNameActivity() {
         return nameActivity;
     }

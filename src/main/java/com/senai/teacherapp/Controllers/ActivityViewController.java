@@ -26,11 +26,10 @@ public class ActivityViewController {
     @FXML private TableColumn<Activity, String> tableActivityName;
     @FXML private TableView<Activity> tableActivity;
 
-    private int schoolClassId;
-
     public ActivityViewController() {
     }
 
+    private int schoolClassId;
     public void setSchoolClassId(int schoolClassId){
         this.schoolClassId = schoolClassId;
         loadActivities();
@@ -38,15 +37,36 @@ public class ActivityViewController {
 
     @FXML
     public void initialize(){
+        loadTableAcitivities();
+    }
+
+    public void loadTableAcitivities(){
         tableActivityId.setCellValueFactory(new PropertyValueFactory<>("idActivity"));
         tableActivityName.setCellValueFactory(new PropertyValueFactory<>("nameActivity"));
         tableActivityDescription.setCellValueFactory(new PropertyValueFactory<>("descriptionActivity"));
         tableActivityDate.setCellValueFactory(new PropertyValueFactory<>("dateActivity"));
+        adjustmentTable();
+    }
 
+    public void adjustmentTable(){
+        tableActivityId.setSortable(false);
+        tableActivityId.setReorderable(false);
+        tableActivityId.setResizable(false);
+
+        tableActivityName.setSortable(false);
+        tableActivityName.setReorderable(false);
+        tableActivityName.setResizable(false);
+
+        tableActivityDescription.setSortable(false);
+        tableActivityDescription.setReorderable(false);
+        tableActivityDescription.setResizable(false);
+
+        tableActivityDate.setSortable(false);
+        tableActivityDate.setReorderable(false);
+        tableActivityDate.setResizable(false);
     }
 
     public void loadActivities(){
-        System.out.println(schoolClassId);
         try {
             ActivityDAO acDAO = new ActivityDAO();
             ObservableList<Activity> activities = FXCollections.observableArrayList(acDAO.listViewActivity(schoolClassId));
@@ -59,16 +79,16 @@ public class ActivityViewController {
 
     @FXML
     void btnOnRegisterActivity(ActionEvent event) throws IOException {
-        System.out.println(schoolClassId);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/register-activity-view.fxml"));
         Parent root = loader.load();
 
         RegisterActivityController rac = loader.getController();
         rac.setSchoolClassId(this.schoolClassId);
-
+        rac.setOnActivityRegistered(() -> loadActivities());
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();
+        stage.setResizable(false);
         stage.setTitle("Cadastrar Atividade");
         stage.setScene(scene);
         stage.show();

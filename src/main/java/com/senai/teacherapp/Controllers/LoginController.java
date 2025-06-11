@@ -3,6 +3,7 @@ package com.senai.teacherapp.Controllers;
 import com.senai.teacherapp.DAO.LoginDAO;
 import com.senai.teacherapp.Models.Login;
 import com.senai.teacherapp.Models.Notification;
+import com.senai.teacherapp.Models.UserSession;
 import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
@@ -26,9 +27,9 @@ public class LoginController {
     void btnEnter(ActionEvent event) throws IOException {
         Login login = new Login(txtUser.getText(), txtPassoword.getText());
         try {
-            String professorName = new LoginDAO().getLogin(login);
-            if (professorName != null) {
-                openPrincipalView(event, professorName);
+            UserSession session = new LoginDAO().getLogin(login);
+            if (session != null) {
+                openPrincipalView(event, session);
             } else {
                 new Notification().ErrorAlert("Erro", "Dados Incorretos! Preencha novamente.");
             }
@@ -37,16 +38,16 @@ public class LoginController {
         }
     }
 
-    private void openPrincipalView(ActionEvent event, String professorName) throws IOException {
+    private void openPrincipalView(ActionEvent event, UserSession session) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/principal-view.fxml"));
-
         Parent root = fxmlLoader.load();
 
         PrincipalViewController pvc = fxmlLoader.getController();
-        pvc.setProfessorName(professorName);
+        pvc.setSession(session);
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();
+        stage.setResizable(false);
         stage.setTitle("Tela Principal");
         stage.setScene(scene);
         stage.show();

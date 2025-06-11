@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="499.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.RegisterActivityController">
    <children>
       <TextField fx:id="txtNameActivity" layoutX="103.0" layoutY="51.0" prefHeight="25.0" prefWidth="298.0" promptText="Escreva o nome da atividade..." />
-      <TextArea fx:id="txtDescriptionActivity" layoutX="102.0" layoutY="121.0" prefHeight="200.0" prefWidth="298.0" promptText="Escreva a descrição da atividade..." />
+      <TextArea fx:id="txtDescriptionActivity" layoutX="102.0" layoutY="121.0" prefHeight="200.0" prefWidth="298.0" promptText="Escreva a descrição da atividade..." wrapText="true" />
       <DatePicker fx:id="dateActivity" layoutX="103.0" layoutY="367.0" />
       <Text layoutX="103.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da Atividade" />
       <Text layoutX="102.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição da Atividade" />

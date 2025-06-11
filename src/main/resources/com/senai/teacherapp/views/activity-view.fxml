@@ -5,16 +5,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="520.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.senai.teacherapp.Controllers.ActivityViewController">
    <children>
-      <Button layoutX="566.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnOnRegisterActivity" text="Cadastrar Atividade" />
-      <TableView fx:id="tableActivity" layoutX="69.0" layoutY="188.0" prefHeight="264.0" prefWidth="600.0">
+      <Button layoutX="704.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnOnRegisterActivity" text="Cadastrar Atividade" />
+      <TableView fx:id="tableActivity" layoutX="39.0" layoutY="188.0" prefHeight="264.0" prefWidth="785.0">
         <columns>
           <TableColumn fx:id="tableActivityId" prefWidth="50.0" text="ID" />
-          <TableColumn fx:id="tableActivityName" prefWidth="200.0" text="Nome " />
-            <TableColumn fx:id="tableActivityDate" prefWidth="100.0" text="Data de Entrega" />
-            <TableColumn fx:id="tableActivityDescription" prefWidth="352.0" text="Descrição" />
+          <TableColumn fx:id="tableActivityName" prefWidth="193.0" text="Nomes das Atividades" />
+            <TableColumn fx:id="tableActivityDate" prefWidth="96.0" text="Data de Entrega" />
+            <TableColumn fx:id="tableActivityDescription" prefWidth="445.0" text="Descrição das Atividades" />
         </columns>
       </TableView>
    </children>
