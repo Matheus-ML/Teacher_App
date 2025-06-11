@@ -100,13 +100,13 @@ public class PrincipalViewController extends Notification {
     }
 
     @FXML
-    void btnOnRegister(ActionEvent event) throws IOException {
+    void btnOnRegister() throws IOException {
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/register-schoolclass-view.fxml"));
         Parent root = fxml.load();
 
         RegisterSchoolClassController rac = fxml.getController();
         rac.setSession(session);
-        rac.setOnSchoolClassRegister(() -> loadSchoolClassTable());
+        rac.setOnSchoolClassRegister(this::loadSchoolClassTable);
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();
@@ -138,17 +138,17 @@ public class PrincipalViewController extends Notification {
 
     private void addBtnDelete() {
         Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>> cellFactory =
-                new Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>>() {
+                new Callback<>() {
 
                     @Override
                     public TableCell<SchoolClass, Void> call(final TableColumn<SchoolClass, Void> param) {
 
-                        TableCell<SchoolClass, Void> cell = new TableCell<SchoolClass, Void>() {
+                        TableCell<SchoolClass, Void> cell = new TableCell<>() {
 
                             private final Button btn = new Button("Excluir");
 
                             {
-                                btn.setOnAction(new EventHandler<ActionEvent>() {
+                                btn.setOnAction(new EventHandler<>() {
 
                                     @Override
                                     public void handle(ActionEvent event) {
@@ -170,7 +170,7 @@ public class PrincipalViewController extends Notification {
                                                     return;
                                                 }
                                             } catch (SQLException e) {
-                                                e.printStackTrace();
+                                                System.out.println("Erro: " + e);
                                             }
 
                                             try {
@@ -204,17 +204,17 @@ public class PrincipalViewController extends Notification {
 
     private void addBtnView() {
         Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>> cellFactory =
-                new Callback<TableColumn<SchoolClass, Void>, TableCell<SchoolClass, Void>>() {
+                new Callback<>() {
 
                     @Override
                     public TableCell<SchoolClass, Void> call(final TableColumn<SchoolClass, Void> param) {
 
-                        TableCell<SchoolClass, Void> cell = new TableCell<SchoolClass, Void>() {
+                        TableCell<SchoolClass, Void> cell = new TableCell<>() {
 
                             private final Button btn = new Button("Visualizar");
 
                             {
-                                btn.setOnAction(new EventHandler<ActionEvent>() {
+                                btn.setOnAction(new EventHandler<>() {
 
                                     @Override
                                     public void handle(ActionEvent event) {

@@ -33,24 +33,11 @@ public class Activity {
     public Activity() {
     }
 
-    public Activity(Integer idActivity, String nameActivity, String descriptionActivity, LocalDate dateActivity) {
-        this.idActivity = idActivity;
-        this.nameActivity = nameActivity;
-        this.descriptionActivity = descriptionActivity;
-        this.dateActivity = dateActivity;
-    }
-
     public Activity(String nameActivity, String descriptionActivity, LocalDate dateActivity, Integer idClass) {
         this.nameActivity = nameActivity;
         this.descriptionActivity = descriptionActivity;
         this.dateActivity = dateActivity;
         this.idClass = idClass;
-    }
-
-    public Activity(String nameActivity, String descriptionActivity, LocalDate dateActivity) {
-        this.nameActivity = nameActivity;
-        this.descriptionActivity = descriptionActivity;
-        this.dateActivity = dateActivity;
     }
 
     public Integer getIdActivity() {

@@ -6,7 +6,6 @@ import com.senai.teacherapp.Models.SchoolClass;
 import com.senai.teacherapp.Models.UserSession;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -64,7 +63,7 @@ public class RegisterSchoolClassController {
         }
     }
     @FXML
-    void btnRegisterSchoolClass(ActionEvent event) {
+    void btnRegisterSchoolClass() {
         String nameClass = txtRegisterNameClass.getText();
         String qtStudent = txtRegisterQtStudent.getText();
 

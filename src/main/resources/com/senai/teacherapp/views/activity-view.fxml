@@ -16,7 +16,7 @@
         <columns>
           <TableColumn fx:id="tableActivityId" prefWidth="43.0" text="ID" />
           <TableColumn fx:id="tableActivityName" prefWidth="208.0" text="Nomes das Atividades" />
-            <TableColumn fx:id="tableActivityDate" prefWidth="112.0" text="Data de Entrega" />
+            <TableColumn fx:id="tableActivityDate" prefWidth="112.0" text="Entrega" />
             <TableColumn fx:id="tableActivityDescription" prefWidth="478.0" text="Descrição das Atividades" />
         </columns>
       </TableView>

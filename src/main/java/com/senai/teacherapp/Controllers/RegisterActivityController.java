@@ -3,7 +3,6 @@ package com.senai.teacherapp.Controllers;
 import com.senai.teacherapp.DAO.ActivityDAO;
 import com.senai.teacherapp.Models.Activity;
 import com.senai.teacherapp.Models.Notification;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -31,7 +30,7 @@ public class RegisterActivityController {
     }
 
     @FXML
-    void btnConfirmActivity(ActionEvent event) {
+    void btnConfirmActivity() {
         LocalDate date = dateActivity.getValue();
         String description = txtDescriptionActivity.getText();
         String name = txtNameActivity.getText();

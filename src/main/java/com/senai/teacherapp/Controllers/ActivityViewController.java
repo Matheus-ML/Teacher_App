@@ -5,7 +5,6 @@ import com.senai.teacherapp.Models.Activity;
 import com.senai.teacherapp.Models.Notification;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -72,19 +71,18 @@ public class ActivityViewController {
             ObservableList<Activity> activities = FXCollections.observableArrayList(acDAO.listViewActivity(schoolClassId));
             tableActivity.setItems(activities);
         } catch (SQLException e) {
-            e.printStackTrace();
             new Notification().ErrorAlert("Erro ao carregar atividades", "Erro: " + e);
         }
     }
 
     @FXML
-    void btnOnRegisterActivity(ActionEvent event) throws IOException {
+    void btnOnRegisterActivity() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/senai/teacherapp/views/register-activity-view.fxml"));
         Parent root = loader.load();
 
         RegisterActivityController rac = loader.getController();
         rac.setSchoolClassId(this.schoolClassId);
-        rac.setOnActivityRegistered(() -> loadActivities());
+        rac.setOnActivityRegistered(this::loadActivities);
 
         Scene scene = new Scene(root);
         Stage stage = new Stage();
